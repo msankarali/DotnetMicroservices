@@ -15,12 +15,10 @@ namespace Catalog.Api.Controllers
     public class CatalogController : ControllerBase
     {
         private readonly IProductRepository _repository;
-        private readonly ILogger _logger;
 
-        public CatalogController(IProductRepository repository, ILogger logger)
+        public CatalogController(IProductRepository repository)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
         [HttpGet]
